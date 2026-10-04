@@ -7,3 +7,4 @@ Route::get('/', [ArquivoController::class, 'index'])->name('home');
 
 Route::post('/files/upload', [ArquivoController::class, 'upload'])->name('files.upload');
 Route::get('/files/download/{filename}', [ArquivoController::class, 'download'])->name('files.download');
+Route::delete('/files/{filename}', [ArquivoController::class, 'destroy'])->name('file.destroy');

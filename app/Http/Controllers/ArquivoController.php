@@ -87,6 +87,18 @@ class ArquivoController extends Controller
         return response()->download($fullpath);
     }
 
+    // Exclui um arquivo do servidor local
+    public function destroy($filename)
+    {
+        $filename = basename($filename);
+        $path = "local_arquivos/{$filename}";
+        if(!Storage::disk('local')->exists($path)) {
+            abort(404, 'Arquivo não encontrado.');
+        }
+        Storage::disk('local')->delete($path);
+        return redirect()->route('home')->with('sucess', 'Arquivo excluído com sucesso!');
+    }
+
     // Lista os arquivos salvos no servidor local
     public function list()
     {

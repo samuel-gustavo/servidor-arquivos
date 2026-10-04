@@ -388,15 +388,24 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="{{ route('files.download', ['filename' => $file]) }}"
-                                        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm font-medium text-slate-200 transition hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.8" stroke="currentColor" class="h-4 w-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 3.75v10.5m0 0l-4.5-4.5m4.5 4.5l4.5-4.5M5.25 20.25h13.5" />
-                                        </svg>
-                                        Baixar
-                                    </a>
+                                    <div class="flex shrink-0 items-center justify-end gap-2">
+                                        <a href="{{ route('files.download', ['filename' => $file]) }}" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm font-medium text-slate-200 transition hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.8" stroke="currentColor" class="h-4 w-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 3.75v10.5m0 0l-4.5-4.5m4.5 4.5l4.5-4.5M5.25 20.25h13.5" />
+                                            </svg>
+                                            Baixar
+                                        </a>
+                                        <form action="{{ route('file.destroy', ['filename' => $file]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este arquivo? {{ $file }}');" >
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2.5 text-sm font-medium text-red-400 transition hover:border-red-500/40 hover:bg-red-500/20 hover:text-red-300" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-4 w-4" >
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 7.5h12m-10.5 0v10.125A2.375 2.375 0 009.875 20h4.25a2.375 2.375 0 002.375-2.375V7.5m-6.75 0V5.625A1.125 1.125 0 0110.875 4.5h2.25a1.125 1.125 0 011.125 1.125V7.5m-7.5 0h9" />
+                                                </svg> Excluir
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
