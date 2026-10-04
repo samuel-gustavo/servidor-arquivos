@@ -372,9 +372,8 @@
                                             @endif
                                         </div>
                                         <div class="min-w-0">
-                                            <p class="truncate text-sm font-medium text-slate-200"
-                                                title="{{ $file }}">
-                                                {{ $file }}
+                                            <p class="truncate text-sm font-medium text-slate-200" title="{{ $file }}">
+                                                {{ \Illuminate\Support\Str::limit($file, 45, '...') }}
                                             </p>
                                             <div class="mt-1 flex items-center gap-2 text-xs text-slate-500">
                                                 @if ($extension)
