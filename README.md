@@ -1,6 +1,6 @@
 ## Projeto: Servidor de Arquivos
 
-<p>Aplicação web desenvolvida com Laravel para enviar, listar e baixar arquivos em uma interface simples e intuitiva. Funcionando como um servidor local em rede.</p>
+<p>Aplicação web desenvolvida com Laravel para enviar, listar, baixar e excluir arquivos em uma interface simples e intuitiva. Funcionando como um servidor local em rede.</p>
 
 ## Sobre o Projeto
 
@@ -18,6 +18,12 @@
 ### Barra para Pesquisar Arquivos
 ![Tela principal](docs/Pesquisar.png)
 
+### Baixar Arquivo
+![Tela principal](docs/Baixar.png)
+
+### Excluir Arquivo
+![Tela principal](docs/Excluir.png)
+
 ## Funcionalidades
 
 <ul>
@@ -25,6 +31,7 @@
     <li>Listagem de arquivos enviados</li>
     <li>Pesquisa de arquivos pelo nome</li>
     <li>Download de arquivos</li>
+    <li>Exclusão de arquivos</li>
     <li>Validação do tamanho do arquivo</li>
 </ul>
 
